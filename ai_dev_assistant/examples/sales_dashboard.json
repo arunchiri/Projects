@@ -20,9 +20,9 @@
     },
     {
       "name": "plot_generator",
-      "language": "r",
-      "template": "r/plot_generator.R.j2",
-      "outputFile": "plot_generator.R"
+      "language": "python",
+      "template": "python/plot_generator.py.j2",
+      "outputFile": "plot_generator.py"
     }
   ],
   "data": [

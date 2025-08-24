@@ -2,16 +2,9 @@
 
 library(ggplot2)
 
-# Print the working directory for debugging
-print(paste("Current working directory:", getwd()))
-
-# List files before creating plot
-print("--- Files before plot generation ---")
-print(list.files())
-
 # Load the sales data
+# Assuming the data file is in the same directory as the script
 sales_data <- read.csv("sales_data.csv")
-print("Sales data loaded successfully.")
 
 # Create a plot
 plot <- ggplot(sales_data, aes(x = as.Date(date), y = sales)) +
@@ -19,18 +12,6 @@ plot <- ggplot(sales_data, aes(x = as.Date(date), y = sales)) +
   geom_point(color = "blue") +
   labs(title = "Sales Over Time", x = "Date", y = "Sales") +
   theme_minimal()
-print("Plot object created.")
 
 # Save the plot as a PNG file
 ggsave("sales_plot.png", plot, width = 8, height = 6, units = "in")
-
-# List files after creating plot
-print("--- Files after plot generation ---")
-print(list.files())
-
-# Check if file was created and print a message
-if (file.exists("sales_plot.png")) {
-  print("R script executed successfully. Plot 'sales_plot.png' generated.")
-} else {
-  print("Error: ggsave failed to create the plot file.")
-}
