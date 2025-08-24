@@ -1,0 +1,34 @@
+{
+  "appName": "SalesDashboard",
+  "author": "AI Developer",
+  "version": "0.1.0",
+  "description": "A simple sales analytics dashboard.",
+  "outputDir": "generated_apps/SalesDashboard",
+  "components": [
+    {
+      "name": "app",
+      "language": "python",
+      "framework": "flask",
+      "template": "python/flask_app.py.j2",
+      "outputFile": "app.py"
+    },
+    {
+      "name": "requirements",
+      "language": "python",
+      "template": "python/requirements.txt.j2",
+      "outputFile": "requirements.txt"
+    },
+    {
+      "name": "plot_generator",
+      "language": "r",
+      "template": "r/plot_generator.R.j2",
+      "outputFile": "plot_generator.R"
+    }
+  ],
+  "data": [
+    {
+      "name": "sales_data.csv",
+      "source": "examples/data/sales_data.csv"
+    }
+  ]
+}
